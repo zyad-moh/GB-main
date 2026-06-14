@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const API_BASE = "http://127.0.0.1:5000";
+const API_BASE = "https://gb-main-production.up.railway.app";
 
 // مكون فرعي لإضافة تأثير 3D حقيقي ومستقل
 const TiltCard = ({ children, delay = 0, tiltForce = 15 }) => {
