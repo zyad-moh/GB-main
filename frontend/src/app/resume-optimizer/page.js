@@ -94,7 +94,7 @@ export default function ResumeOptimizerPage() {
       const projectId = localStorage.getItem("project_id");
       try {
         const res = await fetch(
-          `http://127.0.0.1:5000/api/v1/nlp/index/retun_ats_score_recommendtion/${projectId}`,
+          `https://gb-main-production.up.railway.app/api/v1/nlp/index/retun_ats_score_recommendtion/${projectId}`,
           {
             method: "GET",
             headers: { accept: "application/json" },
