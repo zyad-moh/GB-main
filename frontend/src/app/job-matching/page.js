@@ -9,7 +9,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-const API_BASE = "http://127.0.0.1:5000";
+const API_BASE = "https://gb-main-production.up.railway.app";
 
 export default function JobMatchingPage() {
   const [jobs, setJobs] = useState([]);
