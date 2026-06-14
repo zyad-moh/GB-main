@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PlayCircle, TerminalSquare, Clock, Loader2, AlertTriangle, BookOpen, ArrowRight, Sparkles } from "lucide-react";
 
-const API_BASE = "http://127.0.0.1:5000";
+const API_BASE = "https://gb-main-production.up.railway.app";
 
 // مكون فرعي لإضافة تأثير 3D حقيقي ومستقل لكل بطاقة
 const TiltCard = ({ children, delay }) => {
