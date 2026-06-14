@@ -1,4 +1,5 @@
-const BASE_URL = "http://127.0.0.1:5000/api/v1";
+const BASE_URL = "https://gb-main-production.up.railway.app/api/v1";
+
 
 export async function login(email, password) {
   const res = await fetch(`${BASE_URL}/auth/login`, {
