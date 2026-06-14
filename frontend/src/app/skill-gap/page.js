@@ -20,7 +20,7 @@ import {
   TerminalSquare,
 } from "lucide-react";
 
-const API_BASE = "http://127.0.0.1:5000";
+const API_BASE = "https://gb-main-production.up.railway.app";
 
 // مكون فرعي لإضافة تأثير 3D حقيقي ومستقل لكل بطاقة مهارة
 const TiltCard = ({ children, delay = 0 }) => {
