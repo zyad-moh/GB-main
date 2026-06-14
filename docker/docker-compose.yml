@@ -1,0 +1,45 @@
+# to run docker services  , to get the docker for each services we use mongo db 
+services:
+  mongodb:   #name of service 
+   image: mongo:7.0-jammy #repo name+ image tag name
+   container_name: mongodb  # docker will run mongo service as a separated machine , the idea is that you need to connectg with that maschine and now mongo db is run that machine , i need to listen to this port 
+   ports: 
+    - "27007:27017" # mongodb run in machine on 27017
+   volumes:
+    - mongo_data:/data/db # data path on my laptob : data path on the machine
+   
+   environment:
+    - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME} # MONGO_INITDB_ROOT_USERNAME var name in .env
+    - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+
+   networks:
+    - backend
+  backend:
+   build: ../src
+   container_name: backend
+   ports:
+    - "8000:8000"
+   environment:
+    - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+    - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+   networks:
+    - backend
+   restart: always
+
+  frontend:
+   build: ../frontend
+   container_name: frontend
+   ports:
+    - "3000:3000"
+   volumes:
+    - ../frontend:/app
+    - /app/node_modules
+   networks:
+    - backend
+   restart: always
+
+volumes:
+  mongo_data:
+  
+networks: #virtual network to access ports
+  backend:

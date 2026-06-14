@@ -1,0 +1,40 @@
+{
+  "info": {
+    "_postman_id": "317d21aa-8d8c-4408-9494-bac92d61d2c8",
+    "name": "rag-app",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51678194",
+    "_collection_link": "https://go.postman.co/collection/51678194-317d21aa-8d8c-4408-9494-bac92d61d2c8?source=collection_link"
+  },
+  "item": [],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "api",
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  /* Futuristic Light Theme Basics */
+  --background: #f8fafc; /* Very light slate */
+  --foreground: #0f172a; /* Deep slate */
+  
+  /* Glass Cards */
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  
+  /* Corporate / Deep Blue for Light Mode */
+  --primary: #2563eb; 
+  --primary-foreground: #ffffff;
+  
+  /* Neutral Muted */
+  --muted: #e2e8f0;
+  --muted-foreground: #64748b;
+  
+  /* Interactive Accent */
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  
+  /* Structural Borders */
+  --border: rgba(37, 99, 235, 0.15); 
+}
+
+/* Futuristic Dark Theme */
+[data-theme="dark"] {
+  --background: #030712; /* Deep void space */
+  --foreground: #f8fafc;
+  
+  --card: #0b1120;
+  --card-foreground: #f8fafc;
+  
+  /* Electric Blue / Neon Accents */
+  --primary: #00f0ff; 
+  --primary-foreground: #030712;
+  
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  
+  --border: rgba(0, 240, 255, 0.15);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  background-image: 
+    radial-gradient(ellipse at top, rgba(var(--primary), 0.05) 0%, transparent 60%);
+  background-attachment: fixed;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Advanced Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.glass-panel {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.6) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] .glass {
+  background: rgba(11, 17, 32, 0.6);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .glass-panel {
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.4) 0%, rgba(3, 7, 18, 0.6) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Scrollbar overriding for an enterprise feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ═══════ Landing Page Overrides ═══════ */
+body.landing-page {
+  overflow: hidden; /* landing-wrapper handles its own scroll */
+}
+
+.landing-wrapper {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  z-index: 40;
+  background-color: var(--background);
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+  100% { background-position: 0% center; }
+}
