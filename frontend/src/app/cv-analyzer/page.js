@@ -78,7 +78,7 @@ export default function CvAnalyzerPage() {
     try {
       // 1) Upload
       const uploadResponse = await fetch(
-        `http://127.0.0.1:5000/api/v1/data/upload/${projectId}`,
+        `https://gb-main-production.up.railway.app/api/v1/data/upload/${projectId}`,
         {
           method: "POST",
           headers: { accept: "application/json" },
@@ -95,7 +95,7 @@ export default function CvAnalyzerPage() {
 
       // 2) Process
       const processResponse = await fetch(
-        `http://127.0.0.1:5000/api/v1/data/process/${projectId}`,
+        `https://gb-main-production.up.railway.app/api/v1/data/process/${projectId}`,
         {
           method: "POST",
           headers: {
@@ -136,7 +136,7 @@ export default function CvAnalyzerPage() {
       setError(null);
 
       const response = await fetch(
-        `http://127.0.0.1:5000/api/v1/nlp/index/run_all/${projectId}`,
+        `https://gb-main-production.up.railway.app/api/v1/nlp/index/run_all/${projectId}`,
         {
           method: "POST",
           headers: {
